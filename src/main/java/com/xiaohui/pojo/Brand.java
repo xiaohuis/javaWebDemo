@@ -1,9 +1,5 @@
 package com.xiaohui.pojo;
 
-/**
- * 品牌实体类
- */
-
 public class Brand {
     // id 主键
     private Integer id;
@@ -18,25 +14,6 @@ public class Brand {
     // 状态：0：禁用  1：启用
     private Integer status;
 
-
-    public Brand() {
-    }
-
-    public Brand(Integer id, String brandName, String companyName, String description) {
-        this.id = id;
-        this.brandName = brandName;
-        this.companyName = companyName;
-        this.description = description;
-    }
-
-    public Brand(Integer id, String brandName, String companyName, Integer ordered, String description, Integer status) {
-        this.id = id;
-        this.brandName = brandName;
-        this.companyName = companyName;
-        this.ordered = ordered;
-        this.description = description;
-        this.status = status;
-    }
 
     public Integer getId() {
         return id;
@@ -80,6 +57,13 @@ public class Brand {
 
     public Integer getStatus() {
         return status;
+    }
+    //逻辑视图
+    public String getStatusStr(){
+        if (status == null){
+            return "未知";
+        }
+        return status == 0 ? "禁用":"启用";
     }
 
     public void setStatus(Integer status) {
